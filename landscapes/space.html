@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+document.body.style.backgroundColor = 'black';
+
+var starCount = 1000;
+var starSize = 1;
+var starSpeed = 0.1;
+var starColor = '#ffffff';
+var starOpacity = 0.5;
+var starZIndex = -1;
+var star = document.createElement('div');
+star.style.position = 'absolute';
+star.style.width = star.style.height = starSize + 'px';
+star.style.backgroundColor = starColor;
+star.style.opacity = starOpacity;
+star.style.zIndex = starZIndex;
+for (var i = 0; i < starCount; i++) {
+  var clone = star.cloneNode(true);
+  clone.style.left = Math.random() * 100 + '%';
+  clone.style.top = Math.random() * 100 + '%';
+  clone.style.webkitAnimationDelay = clone.style.animationDelay = Math.random() + 's';
+  document.body.appendChild(clone);
+}
+
+var sun = document.createElement('div');
+sun.style.position = 'absolute';
+sun.style.width = sun.style.height = '100px';
+sun.style.backgroundColor = '#ff0';
+sun.style.borderRadius = '50%';
+sun.style.left = '50%';
+sun.style.top = '50%';
+sun.style.marginLeft = '-50px';
+sun.style.marginTop = '-50px';
+sun.style.zIndex = 1;
+document.body.appendChild(sun);
+
+sun.style.backgroundImage = 'radial-gradient(circle at center, #ff0, #ff0 40%, #ffa000 60%, #000 100%)';
+});
+        </script>
+    </head>
+</html>
